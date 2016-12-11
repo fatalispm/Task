@@ -29,7 +29,7 @@ def triple_predicate(group_triple):
 
 def get_date_of(group_triple: list, parameter='birthDate'):
     """
-    :param triple: list of Triple
+    :param group_triple: list of Triple
     :return: str|None
     """
 
@@ -61,3 +61,8 @@ def get_name(group_triple: list):
     except (StopIteration, AttributeError):
         pass
 
+
+def chunks(l):
+    """Yield successive n-sized chunks from l."""
+    for i in range(0, len(l), 2):
+        yield l[i:i + 2]

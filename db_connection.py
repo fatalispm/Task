@@ -1,12 +1,7 @@
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
+from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm.session import sessionmaker
-
-DATABASE_NAME = "postgres"
-DATABASE_USERNAME = "postgres"
-DATABASE_PASSWORD = "beaver1"
-DATABASE_HOST = "localhost"
+from local import *
 Base = automap_base()
 engine = create_engine(
     "postgres://%s:%s@%s/%s" %
@@ -14,6 +9,7 @@ engine = create_engine(
 Base.prepare(engine, reflect=True)
 
 Persons = Base.classes.persons
+Info = Base.classes.unsorted_info
 
 
 def create_session():
