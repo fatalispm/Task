@@ -61,7 +61,7 @@ def split_into_words(text):
 
 if __name__ == "__main__":
     text = "Hello world! How (sp?) are you today (;"
-    print split_into_words(text)
+    print(split_into_words(text))
     assert (
         split_into_words(text) == [
             'Hello',
